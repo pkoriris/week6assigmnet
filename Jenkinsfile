@@ -1,36 +1,22 @@
 pipeline {
     agent any
-    
-    tools {nodejs "node"}
 
     stages {
-        stage('Start') {
-            steps {
-                echo 'The build has started'
+        stage('Git pull source code'){
+            steps{
+                git branch:'master',url: 'https://github.com/pkoriris/week6assigmnet.git'
             }
         }
-        stage('Clone the repository') {
-            steps {
-                git url: 'https://github.com/pkoriris/week6assigmnet.git', branch: 'main'
+        stage('compile source code'){
+            steps{
+                bat ''' cd C:\Windows\System32\cmd.exe
+                npm install '''
             }
+            
         }
-        stage('Install dependencies') {
+        stage('Hello') {
             steps {
-                sh '''
-                   npm install
-                   '''
-            }
-        }
-        stage('Test') {
-            steps {
-                sh '''
-                   npm run test
-                   '''
-            }
-        }
-        stage('End') {
-            steps {
-                echo 'The build has ended'
+                echo 'Hello World'
             }
         }
     }
