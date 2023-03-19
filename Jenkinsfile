@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git pull source code'){
             steps{
-                git branch:'master',url: 'https://github.com/pkoriris/week6assigmnet.git'
+                git branch:'main',url: 'https://github.com/pkoriris/week6assigmnet.git'
             }
         }
         stage('compile source code'){
