@@ -11,7 +11,7 @@ pipeline {
         }
         stage('compile source code'){
             steps{
-                bat ''' cd C:\\Users\\Admin\\Documents\\gallery
+                bat ''' cd C:\Users\Admin\Documents\myassignment\gallery
                 npm install '''
             }
             
